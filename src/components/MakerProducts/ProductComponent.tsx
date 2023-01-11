@@ -1,4 +1,5 @@
 import React from "react";
+import AddProductModal from "./AddProductModal";
 import { Product } from "./ProductModel";
 
 type ProductComponentProps = {
@@ -6,9 +7,11 @@ type ProductComponentProps = {
 }
 
 export class ProductComponent extends React.Component<ProductComponentProps, {}> {
-    computeConsoScore() {
+    showModal() {
+        const el = document.getElementById("exampleModal") as HTMLModElement
 
     }
+
     render() {
         return (
             <tr>
@@ -25,7 +28,8 @@ export class ProductComponent extends React.Component<ProductComponentProps, {}>
                     {this.props.product.quantity_unity}
                 </td>
                 <td>
-                    <button onClick={this.computeConsoScore}>Add product</button>
+                    <button onClick={this.showModal}>Add product</button>
+                    <AddProductModal />
                 </td>
             </tr>
         );
