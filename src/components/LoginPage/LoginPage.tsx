@@ -31,7 +31,7 @@ function LoginPage() {
 	<div className="container">
 		<form onSubmit={handleSubmit}>
             <label>
-                User Name:
+                Nom d'Utilisateur:
                 <input
                 type="userName"
                 value={userName}
