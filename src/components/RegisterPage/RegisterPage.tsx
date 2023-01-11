@@ -128,6 +128,10 @@ const SignUp: React.FC = () => {
 
       <button type="submit">Submit</button>
 
+      <p>
+          Vous avez déjà un compte ? <a href="/login">Se connecter</a>
+      </p>
+
       {serverResponse && (
         <p style={{ color: serverResponse.success ? "green" : "red" }}>
           {serverResponse.message}

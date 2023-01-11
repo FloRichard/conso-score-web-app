@@ -30,25 +30,28 @@ function LoginPage() {
   return (
 	<div className="container">
 		<form onSubmit={handleSubmit}>
-		<label>
-			User Name:
-			<input
-			type="userName"
-			value={userName}
-			onChange={(e) => setName(e.target.value)}
-			/>
-		</label>
-		<br />
-		<label>
-			Mot de passe:
-			<input
-			type="password"
-			value={password}
-			onChange={(e) => setPassword(e.target.value)}
-			/>
-		</label>
-		<br />
-		<button type="submit">Se connecter</button>
+            <label>
+                User Name:
+                <input
+                type="userName"
+                value={userName}
+                onChange={(e) => setName(e.target.value)}
+                />
+            </label>
+            <br />
+            <label>
+                Mot de passe:
+                <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                />
+            </label>
+            <br />
+            <button type="submit">Se connecter</button>
+            <p>
+              Vous n'avez pas encore de compte ? <a href="/register">S'inscrire</a>
+            </p>
 		</form>
 	</div>
   );
