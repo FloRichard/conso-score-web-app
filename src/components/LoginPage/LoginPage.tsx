@@ -5,7 +5,7 @@ function LoginPage() {
   const [userName, setName] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
 	e.preventDefault();
 	fetch('/login', {
 		method: 'POST',
