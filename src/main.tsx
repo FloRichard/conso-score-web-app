@@ -5,7 +5,7 @@ import LoginPage from './LoginPage'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <LoginPage />
-  </React.StrictMode>,
+	<React.StrictMode>
+		<LoginPage />
+	</React.StrictMode>,
 )
