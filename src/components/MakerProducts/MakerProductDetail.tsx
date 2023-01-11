@@ -5,10 +5,10 @@ type MakerProductDetailProps = {
     product: Product
 }
 
-export class Seller extends React.Component<MakerProductDetailProps,{}> {
+export class Seller extends React.Component<MakerProductDetailProps, {}> {
     render() {
         return (
-            
+            <div></div>
         )
     }
 }
