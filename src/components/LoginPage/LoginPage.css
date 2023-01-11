@@ -21,6 +21,7 @@ form {
   
   input[type="userName"],
   input[type="password"],
+  input[type="number"],
   input[type="text"] {
     width: 100%;
     padding: 12px 20px;
