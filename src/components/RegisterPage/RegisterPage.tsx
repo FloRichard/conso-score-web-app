@@ -15,9 +15,8 @@ interface ServerResponse {
   message: string;
 }
 
-/*
 const SignUp: React.FC = () => {
-  const { register, handleSubmit, errors } = useForm<FormData>();
+  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
   const [serverResponse, setServerResponse] = useState<ServerResponse>();
 
   const onSubmit = async (data: FormData) => {
@@ -42,7 +41,7 @@ const SignUp: React.FC = () => {
       } else {
         setServerResponse({ success: false, message: response.message });
       }
-    } catch (err) {
+    } catch (err: any) {
       setServerResponse({ success: false, message: err.message });
     }
   };
@@ -52,10 +51,10 @@ const SignUp: React.FC = () => {
       <div>
         <label htmlFor="name">Name:</label>
         <input
+          {...register("name", {required: true})}
           type="text"
           id="name"
           name="name"
-          ref={register({ required: true })}
         />
         {errors.name && <p>This field is required</p>}
       </div>
@@ -63,10 +62,10 @@ const SignUp: React.FC = () => {
       <div>
         <label htmlFor="username">Username:</label>
         <input
+          {...register("username", {required: true})}
           type="text"
           id="username"
           name="username"
-          ref={register({ required: true })}
         />
         {errors.username && <p>This field is required</p>}
       </div>
@@ -74,10 +73,10 @@ const SignUp: React.FC = () => {
       <div>
         <label htmlFor="password">Password:</label>
         <input
+          {...register("password", {required: true})}
           type="password"
           id="password"
           name="password"
-          ref={register({ required: true })}
         />
         {errors.password && <p>This field is required</p>}
       </div>
@@ -85,23 +84,33 @@ const SignUp: React.FC = () => {
       <div>
         <label htmlFor="confirmPassword">Confirm Password:</label>
         <input
+          {...register("confirmPassword", {required: true})}
           type="password"
           id="confirmPassword"
           name="confirmPassword"
-          ref={register({ required: true })}
         />
         {errors.confirmPassword && <p>This field is required</p>}
       </div>
 
       <div>
-        <label htmlFor="producerOrReseller">
-          <input
-            type="checkbox"
-            id="producerOrReseller"
+        <label htmlFor="producerOrReseller1">
+            <input
+            {...register("producerOrReseller", {required: true})}
+            type="radio"
             name="producerOrReseller"
-            ref={register({ required: true })}
-          />
-          Producer or Reseller
+            id="producerOrReseller1"
+            value="true" />
+          Producteur
+        </label>
+        <label htmlFor="producerOrReseller2">
+            <input
+            {...register("producerOrReseller", {required: true})}
+            type="radio"
+            name="producerOrReseller"
+            id="producerOrReseller2"
+            value="false"
+              />
+          Vendeur
         </label>
         {errors.producerOrReseller && <p>This field is required</p>}
       </div>
@@ -109,10 +118,10 @@ const SignUp: React.FC = () => {
       <div>
         <label htmlFor="localisation">Localisation:</label>
         <input
+          {...register("localisation", {required: true})}
           type="text"
           id="localisation"
           name="localisation"
-          ref={register({ required: true })}
         />
         {errors.localisation && <p>This field is required</p>}
       </div>
@@ -127,12 +136,5 @@ const SignUp: React.FC = () => {
     </form>
   );
 };
-*/
-
-const SignUp: React.FC = () => {
-  return (
-    <div></div>
-  )
-}
 
 export default SignUp;
