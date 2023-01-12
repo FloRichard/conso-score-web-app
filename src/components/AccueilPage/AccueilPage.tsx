@@ -5,7 +5,7 @@ function LoginPage() {
   return (
 	<div className="container">
       <nav>
-        <Link to="login"><button>Ce connecter</button></Link>
+        <Link to="login"><button>Se connecter</button></Link>
         <Link to="register"><button>S'inscrire</button></Link>
         <Link to="producer-create"><button>Créer un produit (producteur)</button></Link>
       </nav>
