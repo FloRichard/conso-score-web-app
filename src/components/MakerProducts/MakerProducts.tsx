@@ -50,9 +50,9 @@ class MakerProducts extends React.Component<MakerProductProps, MakerProductsStat
 
     render() {
         return (
-            <div className="d-flex flex-column">
+            <div className="container h-100 d-flex flex-column mt-5">
                 <div className="d-flex flex-row justify-content-between">
-                    <h2 className="text-start"> {this.state.makerName} products</h2>
+                    <h2 className="text-start"> Produits de {this.state.makerName}</h2>
                     <div>
                         <ProductSearchBar products={this.state.products} searchInputHandler={this.searchInputChangeCallback} />
                     </div>
@@ -61,10 +61,10 @@ class MakerProducts extends React.Component<MakerProductProps, MakerProductsStat
                     <table className="table">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Price</th>
-                                <th>Carbon footprint</th>
-                                <th>Quantity Unity</th>
+                                <th>Nom</th>
+                                <th>Prix</th>
+                                <th>Empreinte carbone</th>
+                                <th>Unité</th>
                                 <th>Action</th>
                             </tr>
                         </thead>

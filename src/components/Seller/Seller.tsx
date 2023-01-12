@@ -43,9 +43,9 @@ export default class Seller extends React.Component<SellerProps, SellerState> {
 
     public render() {
         return (
-            < div className="d-flex flex-column" >
+            <div className="container h-100 d-flex flex-column mt-5" >
                 <div className="d-flex flex-row justify-content-between">
-                    <h2 className="text-start"> Makers list</h2>
+                    <h2 className="text-start"> Producteurs</h2>
                     <div>
                         <MakersSearchBar makers={this.state.makers} searchInputHandler={this.searchInputChangeCallback} />
                     </div>
@@ -54,8 +54,8 @@ export default class Seller extends React.Component<SellerProps, SellerState> {
                     <table className="table">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Location</th>
+                                <th>Nom</th>
+                                <th>Adresse</th>
                             </tr>
                         </thead>
                         <tbody>
