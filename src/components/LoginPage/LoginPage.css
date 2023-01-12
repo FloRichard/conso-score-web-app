@@ -31,7 +31,7 @@ form {
     border-radius: 4px;
   }
   
-  button[type="submit"] {
+  button {
     width: 100%;
     background-color: #4CAF50;
     color: white;
@@ -42,7 +42,7 @@ form {
     cursor: pointer;
   }
   
-  button[type="submit"]:hover {
+  button:hover {
     background-color: #45a049;
   }
   
