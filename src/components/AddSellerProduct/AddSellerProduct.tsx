@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-
-import { Product } from '../MakerProducts/ProductModel';
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { Product } from "../MakerProducts/ProductModel";
 
 type Category = {
     name: string
@@ -58,9 +57,9 @@ const AddSellerProduct = () => {
             const computeTax: number = consoScore!.tax / 100
             return (
                 <div className="text-start">
-                    <h3>Resultat</h3>
-                    <p> Le conso-score de votre produit est {consoScore?.conso_score}. La taxe appliquée à ce produit est {consoScore?.tax}% du prix de vente.</p>
-                    <p> Pour {sellerFormData?.quantity} {product.name}, le montant total de la taxe sera {sellerFormData!.quantity * (computeTax * sellerFormData!.price)}.</p>
+                    <h3>Result</h3>
+                    <p> You product conso score is {consoScore?.conso_score}. The tax applied to your product corresponds to {consoScore?.tax}% of the selling price.</p>
+                    <p> For {sellerFormData?.quantity} {product.name}, the total price of the the tax will be {sellerFormData!.quantity * (computeTax * sellerFormData!.price)}.</p>
                 </div>
             )
         }
@@ -102,55 +101,55 @@ const AddSellerProduct = () => {
                     <h3 className="text-start">{product.name} detail</h3>
                     <div className="form-group row">
                         <div className="form-group col text-start">
-                            <label htmlFor="category">Catégorie</label>
+                            <label htmlFor="category">Category</label>
                             <input type="text" readOnly className="form-control" id="category" placeholder="Category" value={category?.name} />
                         </div>
                         <div className="form-group col text-start">
-                            <label htmlFor="price">Prix</label>
+                            <label htmlFor="price">Price</label>
                             <input type="text" readOnly className="form-control" id="price" placeholder="Price" value={product?.price || 1} />
                         </div>
                     </div>
-                    <h3 className="text-start mt-2">informations sur le transport</h3>
+                    <h3 className="text-start mt-2"> Transport information</h3>
                     <div className="form-group row">
                         <div className="form-group col text-start">
                             <label htmlFor="type">Type</label>
                             <input type="text" readOnly className="form-control" id="type" placeholder="Type" value={transport?.name} />
                         </div>
                         <div className="form-group col text-start">
-                            <label htmlFor="carbon_fp" >Empreinte carbone (par Km)</label>
+                            <label htmlFor="carbon_fp" >Carbon footprint (by Km)</label>
                             <input type="text" readOnly className="form-control" id="carbon_fp" placeholder="Carbon footprint" value={transport?.carbon_footprint} />
                         </div>
                     </div>
-                    <h3 className="text-start">Empreinte carbone de la production</h3>
+                    <h3 className="text-start">Maker carbon footprint</h3>
                     <div className="form-group text-start">
-                        <label htmlFor="carbon_footprint_maker">Empreinte carbone en gramme par kg de produit</label>
+                        <label htmlFor="carbon_footprint_maker">Carbon foot print en gramme par kg de produit</label>
                         <input type="text" readOnly className="form-control" id="carbon_footprint_maker" placeholder="Carbon footprint" aria-describedby="maker_fp_description" value={product?.carbon_footprint} />
                         <small id="maker_fp_description" className="form-text text-muted">
-                            Cela correspond à l'empreinte carbone du produit lors de sa production.
+                            This corresponds to the carbon footprint of the product from maker side
                         </small>
                     </div>
-                    <h3 className="text-start">Calculer le conso-score</h3>
+                    <h3 className="text-start">Apply conso-score</h3>
                     <div className="form-group text-start">
-                        <label htmlFor="barcode">Code barre</label>
+                        <label htmlFor="barcode">Bar code number</label>
                         <input type="number" className="form-control" id="barcode" placeholder="Bar code number" />
                     </div>
                     <div className="form-group text-start">
-                        <label htmlFor="seller_price">Prix (€)</label>
+                        <label htmlFor="seller_price">Price (€)</label>
                         <input type="number" className="form-control" id="seller_price" placeholder="Your selling price" aria-describedby="seller_price_helper" />
                         <small id="seller_price_helper" className="form-text text-muted">
-                            Renseignez votre prix de vente sans la taxe conso-score appliquée.
+                            Input your selling price without the conso score tax applied
                         </small>
                     </div>
                     <div className="form-group text-start">
-                        <label htmlFor="quantity">Quantité à acheter</label>
+                        <label htmlFor="quantity">Quantity of products</label>
                         <input type="number" className="form-control" id="quantity" placeholder="Quantity" aria-describedby="quantity_helper" />
                         <small id="quantity_helper" className="form-text text-muted">
-                            Cela correspond à la quantité de ce produit que vous souhaitez avoir en stock.
+                            This corresponds to the quantity of this products that you have in your stock
                         </small>
                     </div>
                     {renderResult(showRenderResult)}
                     <div>
-                        <button type="submit"> Calculer</button>
+                        <button type="submit"> Apply score</button>
                     </div>
                 </form>
             </div>

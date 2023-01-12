@@ -1,8 +1,7 @@
-import React from 'react';
-
-import { Maker } from './MakerModel';
-import MakerRow from './MakerRow';
-import { MakersSearchBar } from './MakersSearchBar';
+import React from "react";
+import MakerRow from "./MakerRow";
+import { Maker } from "./MakerModel";
+import { MakersSearchBar } from "./MakersSearchBar";
 
 type SellerState = {
     makers: Maker[],
@@ -55,8 +54,8 @@ export default class Seller extends React.Component<SellerProps, SellerState> {
                     <table className="table">
                         <thead>
                             <tr>
-                                <th>Nom</th>
-                                <th>Localisation</th>
+                                <th>Name</th>
+                                <th>Location</th>
                             </tr>
                         </thead>
                         <tbody>

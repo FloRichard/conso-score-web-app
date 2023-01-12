@@ -1,8 +1,7 @@
-import React from 'react';
-
-import { ProductComponent } from './ProductComponent';
-import { Product } from './ProductModel';
-import ProductSearchBar from './ProductSearchBar';
+import React from "react";
+import { ProductComponent } from "./ProductComponent";
+import { Product } from "./ProductModel";
+import ProductSearchBar from "./ProductSearchBar";
 
 type MakerProductsState = {
     sellerID: string
@@ -53,7 +52,7 @@ class MakerProducts extends React.Component<MakerProductProps, MakerProductsStat
         return (
             <div className="d-flex flex-column">
                 <div className="d-flex flex-row justify-content-between">
-                    <h2 className="text-start"> {this.state.makerName} produits</h2>
+                    <h2 className="text-start"> {this.state.makerName} products</h2>
                     <div>
                         <ProductSearchBar products={this.state.products} searchInputHandler={this.searchInputChangeCallback} />
                     </div>
@@ -62,11 +61,11 @@ class MakerProducts extends React.Component<MakerProductProps, MakerProductsStat
                     <table className="table">
                         <thead>
                             <tr>
-                                <th>Nom</th>
-                                <th>Prix</th>
-                                <th>Empreinte carbone</th>
-                                <th>Unité</th>
-                                <th>Détails</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Carbon footprint</th>
+                                <th>Quantity Unity</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
