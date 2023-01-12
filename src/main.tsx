@@ -18,18 +18,18 @@ import AddSellerProduct from './components/AddSellerProduct/AddSellerProduct';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <BrowserRouter>
-        <HeaderPage/>
-            
+        <HeaderPage />
+
         <Routes>
             <Route path="/" element={<AccueilPage />} />
             <Route path="login" element={<LoginPage />} />
             <Route path="register" element={<RegisterPage />} />
             <Route path="producer-create" element={<ProducerCreatePage />} />
-            <Route path="seller" element={<Seller seller_id='5a39c805-4e15-4944-80af-333d2d11bced' />} />
+            <Route path="seller" element={<Seller />} />
             <Route path="maker/products" element={<MakerProducts />} />
             <Route path="seller/:id/add_product" element={<AddSellerProduct />} />
         </Routes>
 
-        <FooterPage/>
+        <FooterPage />
     </BrowserRouter>
 )

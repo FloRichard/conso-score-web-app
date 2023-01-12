@@ -1,6 +1,6 @@
 import React from "react";
 import { Maker } from "./MakerModel";
-
+import '../css/tr.css'
 type MakerRowProps = {
   maker: Maker
   sellerID: string
@@ -13,7 +13,7 @@ export default class MakerRow extends React.Component<MakerRowProps, {}> {
 
   render() {
     return (
-      <tr className="clickable-row" onClick={() => this.goToProductList(this.props.maker.id)}>
+      <tr className="clickable-row clickable-tr" onClick={() => this.goToProductList(this.props.maker.id)}>
         <td>
           {this.props.maker.name}
         </td>

@@ -75,7 +75,8 @@ const ProducerCreatePage = () => {
       expedition_transport_id: transport_id
     }
     try {
-      const rawResponse = await fetch('http://localhost:9092/maker/5503a140-ab18-4d1a-8b17-3356e8e01a80/product', {
+      const makerID = localStorage.getItem('entity_id')
+      const rawResponse = await fetch('http://localhost:9092/maker/' + makerID + '/product', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

@@ -5,25 +5,25 @@ import { MakersSearchBar } from "./MakersSearchBar";
 
 type SellerState = {
     makers: Maker[],
-    displayedMakers: Maker[]
+    displayedMakers: Maker[],
+    sellerID: string
 }
 
-type SellerProps = {
-    seller_id: string
-}
 
-export default class Seller extends React.Component<SellerProps, SellerState> {
+export default class Seller extends React.Component<{}, SellerState> {
     state: SellerState = {
         makers: [],
-        displayedMakers: []
+        displayedMakers: [],
+        sellerID: localStorage.getItem('entity_id')!
     }
     getSellerMakers() {
-        fetch('http://localhost:9092/seller/' + this.props.seller_id + '/makers')
+        fetch('http://localhost:9092/seller/' + this.state.sellerID + '/makers')
             .then(res => res.json())
             .then(data => {
                 const newState: SellerState = {
                     makers: data as Maker[],
-                    displayedMakers: data as Maker[]
+                    displayedMakers: data as Maker[],
+                    sellerID: this.state.sellerID
                 }
                 this.setState(newState)
             })
@@ -31,6 +31,7 @@ export default class Seller extends React.Component<SellerProps, SellerState> {
 
 
     public componentDidMount() {
+
         this.getSellerMakers()
     }
 
@@ -60,7 +61,7 @@ export default class Seller extends React.Component<SellerProps, SellerState> {
                         </thead>
                         <tbody>
                             {this.state.displayedMakers.map((maker, index) => {
-                                return (<MakerRow maker={maker} sellerID={this.props.seller_id} key={index} />)
+                                return (<MakerRow maker={maker} sellerID={this.state.sellerID} key={index} />)
                             })
                             }
                         </tbody>

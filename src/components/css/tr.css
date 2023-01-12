@@ -1,0 +1,7 @@
+.clickable-tr:hover{
+    background-color: #45a04953;
+}
+
+.clickable-tr:active{
+    background-color: #45a04988;
+}

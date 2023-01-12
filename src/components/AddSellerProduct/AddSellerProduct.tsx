@@ -57,7 +57,7 @@ const AddSellerProduct = () => {
             const computeTax: number = consoScore!.tax / 100
             return (
                 <div className="text-start">
-                    <h3>Resultat</h3>
+                    <h4>Resultat</h4>
                     <p> Votre produit a un conso score de {consoScore?.conso_score}. Une taxe correpondant à {consoScore?.tax}% du prix de vente devra être appliquée sur le produit, soit {(computeTax * sellerFormData!.price)} euros.</p>
                     <p> Pour {sellerFormData?.quantity} {product.name}, le montant total de la taxe est de {sellerFormData!.quantity * (computeTax * sellerFormData!.price)} euros.</p>
                 </div>
@@ -96,33 +96,34 @@ const AddSellerProduct = () => {
 
     return (
         <div className="container h-100 mt-5 w-50">
-            <div className="row ">
+            <div className="row w-75 mx-auto">
                 <form target="_blank" onSubmit={handleSubmit}>
                     <h4 className="text-start">{product.name}</h4>
-                    <div className="row text-start">
+                    <div className="row text-start ">
                         <div className="col">
-                            <p> Catégorie: {category?.name}</p>
+                            <p><b>Catégorie:</b> {category?.name}</p>
                         </div>
                         <div className="col">
-                            <p> Prix: {product?.price}</p>
+                            <p><b>Prix:</b> {product?.price}</p>
                         </div>
                     </div>
                     <h4 className="text-start mt-2">Moyen de transport</h4>
                     <div className="form-group row text-start">
                         <div className="col">
-                            <p> Type: {transport?.name}</p>
+                            <p><b>Type</b>: {transport?.name}</p>
                         </div>
                         <div className="col">
-                            <p> Empreinte carbone (en Km): {transport?.carbon_footprint}</p>
+                            <p><b>Empreinte carbone (en Km)</b>: {transport?.carbon_footprint}</p>
                         </div>
                     </div>
-                    <h4 className="text-start">Empreinte carbone du producteur</h4>
+                    <h4 className="text-start mt-2">Empreinte carbone du producteur</h4>
                     <div className="form-group text-start">
                         <div className="col">
-                            <p> Empreinte carbone en gramme par kg de produit: {product?.carbon_footprint}</p>
+                            <p><b>Empreinte carbone en gramme par kg de produit</b>: {product?.carbon_footprint}</p>
                         </div>
                     </div>
-                    <h4 className="text-start">Calcul du conso score</h4>
+                    <h4 className="text-start mt-2 border-top pt-2">Calcul du conso score</h4>
+
                     <div className="form-group text-start">
                         <label htmlFor="barcode">Numéro de code barre</label>
                         <input type="number" className="form-control w-50" id="barcode" placeholder="Numéro de code barre" />

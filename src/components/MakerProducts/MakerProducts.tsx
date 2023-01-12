@@ -65,7 +65,6 @@ class MakerProducts extends React.Component<MakerProductProps, MakerProductsStat
                                 <th>Prix</th>
                                 <th>Empreinte carbone</th>
                                 <th>Unité</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
