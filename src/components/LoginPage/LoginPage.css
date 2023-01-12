@@ -10,7 +10,7 @@ form {
     display: flex;
     align-items: center; /*centrer verticalement */
     justify-content: center; /*centrer horizontalement */
-    height: 100vh; /* pour occuper toute la hauteur de l'écran */
+    /*height: 100vh; *//* pour occuper toute la hauteur de l'écran */
   }
   
   label {

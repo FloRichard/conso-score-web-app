@@ -1,5 +1,8 @@
+import './LoginPage.css';
+
 import React, { useState } from 'react';
-import './LoginPage.css'
+
+import Navbar from '../Navigation/nav-bar';
 
 function LoginPage() {
   const [userName, setName] = useState('');
@@ -28,6 +31,9 @@ function LoginPage() {
   }
 
   return (
+    <div>
+           <Navbar />
+
 	<div className="container">
 		<form onSubmit={handleSubmit}>
             <label>
@@ -53,7 +59,8 @@ function LoginPage() {
               Vous n'avez pas encore de compte ? <a href="/register">S'inscrire</a>
             </p>
 		</form>
-	</div>
+	</div>    </div>
+
   );
 }
 

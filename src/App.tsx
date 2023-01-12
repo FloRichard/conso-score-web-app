@@ -1,9 +1,13 @@
-import './App.css'
+import './App.css';
+
+import Navbar from './components/Navigation/nav-bar';
 
 function App() {
-  return (
-  <div><button>Test</button></div>
-  )
+  return <Navbar /> 
+  /*(
+  
+  <div> <button>Test</button></div>
+  )*/
 }
 
 export default App
