@@ -47,7 +47,7 @@ const SignUp: React.FC = () => {
   };
 
   return (
-    <div className="container">
+    <div id="content">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label htmlFor="name">Nom:</label>

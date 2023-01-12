@@ -27,7 +27,7 @@ function LoginPage() {
   }
 
   return (
-	<div className="container">
+	<div id="content">
 		<form onSubmit={handleSubmit}>
             <label>
                 Nom d'Utilisateur:

@@ -40,7 +40,7 @@ const ProducerCreatePage: React.FC = () => {
   };
 
   return (
-    <div className="container">
+    <div id="content">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label htmlFor="productName">Nom du produit:</label>

@@ -5,7 +5,7 @@ import HeaderPage from '../HeaderPage';
 function LoginPage() {
   return (  
     
-	<div className="container">
+	<div id="content">
       <nav>
         <Link to="login"><button>Se connecter</button></Link>
         <Link to="register"><button>S'inscrire</button></Link>
