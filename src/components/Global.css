@@ -10,7 +10,7 @@ form {
     display: flex;
     align-items: center; /*centrer verticalement */
     justify-content: center; /*centrer horizontalement */
-    height: 100vh; /* pour occuper toute la hauteur de l'écran */
+    min-height: 100%;
   }
   
   label {
@@ -54,14 +54,18 @@ form {
 
   #header{
     width: 100%;
-    min-height: 10px;
+    min-height: 5%;
     background-color: #45a049;
+    position: fixed;
+    top: 0px
   }
 
   #footer{
     width: 100%;
-    min-height: 10px;
+    min-height: 1%;
     background-color: #45a049;
+    position: fixed;
+    bottom: 0px;
   }
 
   #logo{

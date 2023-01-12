@@ -11,13 +11,15 @@ import FooterPage from './components/FooterPage';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <BrowserRouter>
-        <HeaderPage/>
-        <Routes>
-            <Route path="/" element={<AccueilPage />} />
-            <Route path="login" element={<LoginPage />} />
-            <Route path="register" element={<RegisterPage />} />
-            <Route path="producer-create" element={<ProducerCreatePage />} />
-        </Routes>
-        <FooterPage/>
+        <div id="screenSize">
+            <HeaderPage/>
+            <Routes>
+                <Route path="/" element={<AccueilPage />} />
+                <Route path="login" element={<LoginPage />} />
+                <Route path="register" element={<RegisterPage />} />
+                <Route path="producer-create" element={<ProducerCreatePage />} />
+            </Routes>
+            <FooterPage/>
+        </div>
     </BrowserRouter>
 )
