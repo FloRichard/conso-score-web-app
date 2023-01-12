@@ -4,6 +4,7 @@ import { Product } from "./ProductModel";
 
 type ProductComponentProps = {
     product: Product
+    sellerID: string
 }
 
 export class ProductComponent extends React.Component<ProductComponentProps, {}> {
@@ -17,13 +18,13 @@ export class ProductComponent extends React.Component<ProductComponentProps, {}>
                     {this.props.product.price}
                 </td>
                 <td>
-                    {this.props.product.carbon_foot_print}
+                    {this.props.product.carbon_footprint}
                 </td>
                 <td>
                     {this.props.product.quantity_unity}
                 </td>
                 <td>
-                    <Link to={`/seller/${this.props.product.id}/add_product`} state={{ product: this.props.product }}> Add product </Link>
+                    <Link to={`/seller/${this.props.product.product_id}/add_product`} state={{ product: this.props.product, seller_id: this.props.sellerID }}> Add product </Link>
                 </td>
             </tr>
         );

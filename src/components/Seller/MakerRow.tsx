@@ -3,11 +3,12 @@ import { Maker } from "./MakerModel";
 
 type MakerRowProps = {
   maker: Maker
+  sellerID: string
 }
 
 export default class MakerRow extends React.Component<MakerRowProps, {}> {
   goToProductList(id: string) {
-    window.location.assign("/maker/" + id + "/products?maker_name=" + this.props.maker.name)
+    window.location.assign("/maker/products?maker_name=" + this.props.maker.name + "&maker_id=" + id + "&seller_id=" + this.props.sellerID)
   }
 
   render() {

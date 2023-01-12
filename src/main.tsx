@@ -20,8 +20,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             <Route path="/" element={<App />} />
             <Route path="login" element={<LoginPage />} />
             <Route path="register" element={<RegisterPage />} />
-            <Route path="seller" element={<Seller />} />
-            <Route path="maker/:id/products" element={<MakerProducts />} />
+            <Route path="seller" element={<Seller seller_id='5a39c805-4e15-4944-80af-333d2d11bced' />} />
+            <Route path="maker/products" element={<MakerProducts />} />
             <Route path="seller/:id/add_product" element={<AddSellerProduct />} />
         </Routes>
     </BrowserRouter>

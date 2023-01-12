@@ -8,39 +8,30 @@ type SellerState = {
     displayedMakers: Maker[]
 }
 
-export default class Seller extends React.Component<{}, SellerState> {
+type SellerProps = {
+    seller_id: string
+}
+
+export default class Seller extends React.Component<SellerProps, SellerState> {
     state: SellerState = {
         makers: [],
         displayedMakers: []
     }
+    getSellerMakers() {
+        fetch('http://localhost:9092/seller/' + this.props.seller_id + '/makers')
+            .then(res => res.json())
+            .then(data => {
+                const newState: SellerState = {
+                    makers: data as Maker[],
+                    displayedMakers: data as Maker[]
+                }
+                this.setState(newState)
+            })
+    }
+
 
     public componentDidMount() {
-        this.setState({
-            makers: [
-                {
-                    id: "2e6652c2-91b3-4857-a7fc-990953690a2d",
-                    name: "Jean",
-                    location: "1 rue de Bou, 14000, Caen"
-                },
-                {
-                    id: "bec62b34-d01b-45a6-9a8a-bf9a02964453",
-                    name: "Michel",
-                    location: "2 rue de Bra, Parus"
-                }
-            ],
-            displayedMakers: [
-                {
-                    id: "2e6652c2-91b3-4857-a7fc-990953690a2d",
-                    name: "Jean",
-                    location: "1 rue de Bou, 14000, Caen"
-                },
-                {
-                    id: "bec62b34-d01b-45a6-9a8a-bf9a02964453",
-                    name: "Michel",
-                    location: "2 rue de Bra, Parus"
-                }
-            ],
-        })
+        this.getSellerMakers()
     }
 
     searchInputChangeCallback = (filteredMakers: Maker[]) => {
@@ -69,7 +60,7 @@ export default class Seller extends React.Component<{}, SellerState> {
                         </thead>
                         <tbody>
                             {this.state.displayedMakers.map((maker, index) => {
-                                return (<MakerRow maker={maker} key={index} />)
+                                return (<MakerRow maker={maker} sellerID={this.props.seller_id} key={index} />)
                             })
                             }
                         </tbody>

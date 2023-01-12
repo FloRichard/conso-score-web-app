@@ -1,8 +1,8 @@
 export type Product = {
-    id: string
+    product_id: string
     name: string
     price: number
-    carbon_foot_print: number
+    carbon_footprint: number
     quantity_unity: string
     category_id: string
     expedition_transport_id: string
