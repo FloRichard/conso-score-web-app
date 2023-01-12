@@ -1,5 +1,6 @@
 import ReactDOM from 'react-dom/client'
 import './index.css'
+import './components/Global.css'
 
 import LoginPage from './components/LoginPage/LoginPage';
 import AccueilPage from './components/AccueilPage/AccueilPage'
