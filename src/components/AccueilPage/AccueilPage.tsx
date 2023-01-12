@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import HeaderPage from '../HeaderPage';
 
 function LoginPage() {
-  return (
+  return (  
+    
 	<div className="container">
       <nav>
         <Link to="login"><button>Se connecter</button></Link>
