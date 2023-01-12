@@ -54,20 +54,21 @@ const ProducerCreatePage: React.FC = () => {
         </div>
 
         <div>
-          <label htmlFor="unity">Unité: </label>
+            <label htmlFor="unity">Unité: </label>
 
-          <div>
-            <select>
-              <option value="kilos">Kilos</option>
-              <option value="litres">Litres</option>
-              <option value="unite">Unité</option>
-            </select>
+          <div className="horizontal">
             <input
               {...register("unity", { required: true })}
               type="text"
               id="unity"
               name="unity"
               />
+
+            <select>
+                <option value="kilos">Kilos</option>
+                <option value="litres">Litres</option>
+                <option value="unite">Unité</option>
+            </select>
           </div>
 
           {errors.unity && <p>Ce champ est obligatoire</p>}
