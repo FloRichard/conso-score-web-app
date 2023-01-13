@@ -46,7 +46,7 @@ export default class Seller extends React.Component<{}, SellerState> {
         return (
             <div className="container h-100 d-flex flex-column mt-5" >
                 <div className="d-flex flex-row justify-content-between">
-                    <h2 className="text-start"> Producteurs</h2>
+                    <h2 className="text-start">Producteurs partenaires</h2>
                     <div>
                         <MakersSearchBar makers={this.state.makers} searchInputHandler={this.searchInputChangeCallback} />
                     </div>

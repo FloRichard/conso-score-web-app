@@ -58,8 +58,8 @@ const AddSellerProduct = () => {
             return (
                 <div className="text-start">
                     <h4>Resultat</h4>
-                    <p> Votre produit a un conso score de {consoScore?.conso_score}. Une taxe correpondant à {consoScore?.tax}% du prix de vente devra être appliquée sur le produit, soit {(computeTax * sellerFormData!.price)} euros.</p>
-                    <p> Pour {sellerFormData?.quantity} {product.name}, le montant total de la taxe est de {sellerFormData!.quantity * (computeTax * sellerFormData!.price)} euros.</p>
+                    <p> Votre produit a un conso score de {consoScore?.conso_score}. Une taxe correspondant à {consoScore?.tax}% du prix de vente devra être appliquée sur le produit, soit {(computeTax * sellerFormData!.price)} euros.</p>
+                    <p> Pour {sellerFormData?.quantity} {product.quantity_unity} de {product.name}, le montant total de la taxe est de {sellerFormData!.quantity * (computeTax * sellerFormData!.price)} euros.</p>
                 </div>
             )
         }
