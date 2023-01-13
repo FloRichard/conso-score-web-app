@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import { Product } from "../MakerProducts/ProductModel";
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
+import { Product } from '../MakerProducts/ProductModel';
 
 type Category = {
     name: string
@@ -144,7 +145,7 @@ const AddSellerProduct = () => {
                     </div>
                     {renderResult(showRenderResult)}
                     <div>
-                        <button type="submit" className="w-25"> Apply score</button>
+                        <button type="submit" className="w-25"> Calculer</button>
                     </div>
                 </form>
             </div>
