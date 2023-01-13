@@ -74,26 +74,22 @@ const ProducerCreatePage = () => {
       category_id: category_id,
       expedition_transport_id: transport_id
     }
-    try {
-      const makerID = localStorage.getItem('entity_id')
-      const rawResponse = await fetch('http://localhost:9092/maker/' + makerID + '/product', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(body)
-      });
-      const response = await rawResponse.json();
-
-      if (response.success) {
-        setServerResponse({ success: true, message: response.message });
+    // try {
+    const makerID = localStorage.getItem('entity_id')
+    fetch('http://localhost:9092/maker/' + makerID + '/product', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    }).then(res => {
+      if (res.ok) {
+        setServerResponse({ success: true, message: 'Votre produit a été sauvegardé !' });
       } else {
-        setServerResponse({ success: false, message: response.message });
+        setServerResponse({ success: true, message: 'Un problème est survenu, veuillez réessayer.' });
       }
-    } catch (err: any) {
-      setServerResponse({ success: false, message: err.message });
-    }
+    })
   };
 
   return (

@@ -10,11 +10,7 @@ type MakerProductsState = {
     displayedProducts: Product[]
 }
 
-type MakerProductProps = {
-    maker_name: string
-}
-
-class MakerProducts extends React.Component<MakerProductProps, MakerProductsState> {
+class MakerProducts extends React.Component<{}, MakerProductsState> {
     state: MakerProductsState = {
         sellerID: '',
         makerName: '',
